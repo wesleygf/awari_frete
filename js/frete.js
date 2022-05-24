@@ -29,18 +29,17 @@ function calculaFrete() {
     mensagemFinal(destino, frete);
 }
 
-function geraEstado(){
-    let selectBox = document.getElementById("estados");
+function geraOption(elemento){
+
+    let tipos = eval(elemento);
+    let selectBox = document.getElementById(elemento);
     selectBox.options.add(new Option("Nao consta", ""));
-    for (const estado in estados) {
-        selectBox.options.add(new Option(estado, estado));
+    for (const tipo in tipos) {
+        selectBox.options.add(new Option(tipo, tipo));
     }
 }
 
-function geraRegiao(){
-    let selectBox = document.getElementById("regioes");
-    selectBox.options.add(new Option("Nao consta", ""));
-    for (const regiao in regioes) {
-        selectBox.options.add(new Option(regiao, regiao));
-    }
+function geraOptions(){
+    geraOption("regioes");
+    geraOption("estados");
 }
